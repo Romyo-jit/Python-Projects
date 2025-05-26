@@ -1,4 +1,4 @@
-codes = ["bla", "br", "r", "o", 'y', "gree", "blu", "v", "grey", "w", "sp"]
+codes = ["black", "brown", "red", "orange", 'yellow', "green", "blue", "violet", "grey", "white", "sp"]
 
 def encrypt(data):
     enc_code = []
@@ -49,13 +49,6 @@ def decrypt(data):
 stri = input("Write string: ")
 choi = int(input("Write 1 to encrypt, 2 to decrypt: "))
 stri = stri.split(" ")
-
-'''
-stri = "v r sp br bla br sp br bla grey sp br bla grey sp br br br sp - br bla o sp br br v sp br r br sp br br gree sp"
-#stri = "Hello guys"
-stri = stri.split(" ")
-choi = 2
-'''
 
 if choi == 1:
     print("Encrypted str: ")
