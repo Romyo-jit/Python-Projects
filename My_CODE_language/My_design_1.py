@@ -8,48 +8,53 @@ def encrypt(data):
         for lett in wrd:
             ascis.append(ord(lett))
             ascis.append("sp")
-            
+        ascis.append('-')
+    ascis.pop()
+    
     for i in ascis:
-        if i == 'sp':
+        if i == 'sp' or i == '-':
             enc_code.append(i)
             continue
         for dig in str(i):
             enc_code.append(codes[int(dig)])
     return ' '.join(enc_code)
-    
+
 def decrypt(data):
     letr = ''
     ascis = []
     val = ''
     
     for i in data:
+        if i == '-':
+            ascis.append(' ')
+            continue
         if i in codes:
             if i == 'sp':
-                if val:
-                    ascis.append(int(val))
-                    val = ''
+                ascis.append(int(val))
+                val = ''
                 continue
-            val = val + str(codes.index(i))
+            val += str(codes.index(i))
     try:
-        if val:
-            ascis.append(int(val))
+        ascis.append(int(val))
     except:
         pass
-    
+        
     for i in ascis:
+        if i == ' ':
+            letr += i
+            continue
         letr += chr(i)
     return letr
 
 stri = input("Write string: ")
 choi = int(input("Write 1 to encrypt, 2 to decrypt: "))
-
 stri = stri.split(" ")
 
 '''
-stri = "br br r sp o r bla"
-stri = "Helloguys"
-
-choi = 1
+stri = "v r sp br bla br sp br bla grey sp br bla grey sp br br br sp - br bla o sp br br v sp br r br sp br br gree sp"
+#stri = "Hello guys"
+stri = stri.split(" ")
+choi = 2
 '''
 
 if choi == 1:
