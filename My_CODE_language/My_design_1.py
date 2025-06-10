@@ -1,5 +1,5 @@
-codes = ["black", "brown", "red", "orange", 'yellow', "green", "blue", "violet", "grey", "white", "sp"]
-codes_ano = ["bla", "br", "r", "o", 'y', "gree", "blu", "v", "grey", "w", "sp"]
+#codes = ["black", "brown", "red", "orange", 'yellow', "green", "blue", "violet", "grey", "white", "sp"]
+codes = ["bla", "br", "r", "o", 'y', "gree", "blu", "v", "grey", "w", "sp"]
 
 
 def encrypt(data):
