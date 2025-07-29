@@ -17,8 +17,6 @@
 
 from random import randrange as rn
 from time import sleep
-import os
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
 from dotmodule import Dot
 
 letters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!?.'
