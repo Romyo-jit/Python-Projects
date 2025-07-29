@@ -17,8 +17,9 @@
 
 from random import randrange as rn
 from time import sleep
-#from COOLEST_thing.dotmodule import Dot
-import CoolestThing.dotmodule 
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+from dotmodule import Dot
 
 letters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!?.'
 

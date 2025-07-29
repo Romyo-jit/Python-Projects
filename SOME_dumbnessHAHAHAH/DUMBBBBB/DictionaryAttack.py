@@ -2,7 +2,7 @@
 ###COMPLETED###
 
 import hashlib as hl
-from CoolestThing.dotmodule import Dot
+from My_CODE_language.dotmodule import Dot
 
 alg = input("Write hashing algorithm name defalt SHA256: ")
 my_hash = input("Enter hash: ")

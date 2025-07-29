@@ -2,7 +2,7 @@
 #Completed
 
 from random import randint
-from CoolestThing.dotmodule import Dot
+from My_CODE_language.dotmodule import Dot
 import sys
 
 def val(num):
