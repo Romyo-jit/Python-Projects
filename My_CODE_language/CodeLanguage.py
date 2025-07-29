@@ -17,7 +17,8 @@
 
 from random import randrange as rn
 from time import sleep
-from COOLEST_thing.dotmodule import Dot
+#from COOLEST_thing.dotmodule import Dot
+import CoolestThing.dotmodule 
 
 letters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!?.'
 
