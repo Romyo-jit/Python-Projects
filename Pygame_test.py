@@ -22,10 +22,11 @@ player_speed = 5
 clock = pygame.time.Clock()
 is_running = True
 
-add = True
+addx = True
+addy = True
 # --- MAIN GAME LOOP ---
 while is_running:
-    
+
     # 6. Event Handling Loop (Checks inputs and window interactions)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -41,16 +42,28 @@ while is_running:
     #     player_rect.y -= player_speed
     # if keys[pygame.K_DOWN] or keys[pygame.K_s]:
     #     player_rect.y += player_speed
-    if (player_rect.x + player_speed > 800 - 50) or not add:
+    if (player_rect.x + player_speed > SCREEN_WIDTH - 50) or not addx:
         if (player_rect.x - player_speed < 0):
-            add = True
+            addx = True
             player_rect.x += player_speed
         else:
-            add = False
+            addx = False
             player_rect.x -= player_speed
     else:
-        add = True
+        addx = True
         player_rect.x += player_speed
+        
+        
+    if (player_rect.y + player_speed > SCREEN_HEIGHT - 50) or not addy:
+        if (player_rect.y - player_speed < 0):
+            addy = True
+            player_rect.y += player_speed
+        else:
+            addy = False
+            player_rect.y -= player_speed
+    else:
+        addy = True
+        player_rect.y += player_speed
 
     # 8. Render Section (Drawing elements on the screen)
     screen.fill(WHITE) # Always clear the screen first
