@@ -1,17 +1,18 @@
 import pygame
+import random
 import sys
+import math
 
-# 1. Initialize all imported pygame modules
 pygame.init()
 
 # 2. Set up the game display window
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-# pygame.display.set_caption("My First Pygame Example")
 
 # 3. Define basic RGB color constants
 WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
 BLUE = (0, 100, 255)
 
 # 4. Set up the player object (X, Y, width, height)
@@ -32,7 +33,6 @@ while is_running:
         if event.type == pygame.QUIT:
             is_running = False
 
-    # 7. Real-time Keyboard State Input Processing
     # keys = pygame.key.get_pressed()
     # if keys[pygame.K_LEFT] or keys[pygame.K_a]:
     #     player_rect.x -= player_speed
@@ -42,10 +42,13 @@ while is_running:
     #     player_rect.y -= player_speed
     # if keys[pygame.K_DOWN] or keys[pygame.K_s]:
     #     player_rect.y += player_speed
+    
+    angular_speed = int(math.sqrt(random.randrange(player_speed)*random.randrange(player_speed) + random.randrange(player_speed)*random.randrange(player_speed)))
+
     if (player_rect.x + player_speed > SCREEN_WIDTH - 50) or not addx:
         if (player_rect.x - player_speed < 0):
             addx = True
-            player_rect.x += player_speed
+            player_rect.x += player_speed + angular_speed
         else:
             addx = False
             player_rect.x -= player_speed
@@ -53,11 +56,10 @@ while is_running:
         addx = True
         player_rect.x += player_speed
         
-        
     if (player_rect.y + player_speed > SCREEN_HEIGHT - 50) or not addy:
         if (player_rect.y - player_speed < 0):
             addy = True
-            player_rect.y += player_speed
+            player_rect.y += player_speed + angular_speed
         else:
             addy = False
             player_rect.y -= player_speed
@@ -66,8 +68,9 @@ while is_running:
         player_rect.y += player_speed
 
     # 8. Render Section (Drawing elements on the screen)
-    screen.fill(WHITE) # Always clear the screen first
-    pygame.draw.rect(screen, BLUE, player_rect) # Draw the player
+    screen.fill(BLACK) # Always clear the screen first
+    pygame.draw.rect(screen, BLUE, player_rect) # Draw the players
+    # pygame.draw.circle(screen, BLUE, (player_rect.x, player_rect.y), 50, width=0)
 
     # 9. Flip/Update the display buffer to make visuals visible
     pygame.display.flip()
@@ -75,6 +78,5 @@ while is_running:
     # 10. Frame Rate Regulation (Locks game logic to 60 Frames Per Second)
     clock.tick(60)
 
-# --- CLEAN UP AND EXIT ---
 pygame.quit()
 sys.exit()
