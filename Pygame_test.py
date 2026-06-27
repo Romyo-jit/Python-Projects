@@ -44,6 +44,10 @@ while is_running:
         player_rect.y += player_speed
     
     angular_speed = int(math.sqrt(random.randrange(player_speed)*random.randrange(player_speed) + random.randrange(player_speed)*random.randrange(player_speed)))
+    # angular_speed = 10
+
+    if random.choice([1, 0]) == 0:
+        angular_speed = -angular_speed
 
     if (player_rect.x + player_speed > SCREEN_WIDTH - 50) or not addx:
         if (player_rect.x - player_speed < 0):
@@ -51,10 +55,10 @@ while is_running:
             player_rect.x += player_speed + angular_speed
         else:
             addx = False
-            player_rect.x -= player_speed + angular_speed
+            player_rect.x -= player_speed
     else:
         addx = True
-        player_rect.x += player_speed + angular_speed
+        player_rect.x += player_speed 
         
     if (player_rect.y + player_speed > SCREEN_HEIGHT - 50) or not addy:
         if (player_rect.y - player_speed < 0):
@@ -62,10 +66,10 @@ while is_running:
             player_rect.y += player_speed + angular_speed
         else:
             addy = False
-            player_rect.y -= player_speed + angular_speed
+            player_rect.y -= player_speed 
     else:
         addy = True
-        player_rect.y += player_speed + angular_speed
+        player_rect.y += player_speed 
 
     # 8. Render Section (Drawing elements on the screen)
     screen.fill(BLACK) # Always clear the screen first
