@@ -33,15 +33,15 @@ while is_running:
         if event.type == pygame.QUIT:
             is_running = False
 
-    # keys = pygame.key.get_pressed()
-    # if keys[pygame.K_LEFT] or keys[pygame.K_a]:
-    #     player_rect.x -= player_speed
-    # if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
-    #     player_rect.x += player_speed
-    # if keys[pygame.K_UP] or keys[pygame.K_w]:
-    #     player_rect.y -= player_speed
-    # if keys[pygame.K_DOWN] or keys[pygame.K_s]:
-    #     player_rect.y += player_speed
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+        player_rect.x -= player_speed
+    if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+        player_rect.x += player_speed
+    if keys[pygame.K_UP] or keys[pygame.K_w]:
+        player_rect.y -= player_speed
+    if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+        player_rect.y += player_speed
     
     angular_speed = int(math.sqrt(random.randrange(player_speed)*random.randrange(player_speed) + random.randrange(player_speed)*random.randrange(player_speed)))
 
