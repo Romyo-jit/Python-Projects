@@ -51,10 +51,10 @@ while is_running:
             player_rect.x += player_speed + angular_speed
         else:
             addx = False
-            player_rect.x -= player_speed
+            player_rect.x -= player_speed + angular_speed
     else:
         addx = True
-        player_rect.x += player_speed
+        player_rect.x += player_speed + angular_speed
         
     if (player_rect.y + player_speed > SCREEN_HEIGHT - 50) or not addy:
         if (player_rect.y - player_speed < 0):
@@ -62,10 +62,10 @@ while is_running:
             player_rect.y += player_speed + angular_speed
         else:
             addy = False
-            player_rect.y -= player_speed
+            player_rect.y -= player_speed + angular_speed
     else:
         addy = True
-        player_rect.y += player_speed
+        player_rect.y += player_speed + angular_speed
 
     # 8. Render Section (Drawing elements on the screen)
     screen.fill(BLACK) # Always clear the screen first
